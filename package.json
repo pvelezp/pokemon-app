@@ -1,9 +1,9 @@
 {
-  "name": "react-redux-saga-ts-vite-boilerplate",
-  "version": "0.0.4",
+  "name": "pokemon-app-velez",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && npm run build:css && vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint --ignore-path .eslintignore ./ --ext .ts,.tsx",
     "lint:fix": "eslint --ignore-path .eslintignore --fix ./ --ext .ts,.tsx",
