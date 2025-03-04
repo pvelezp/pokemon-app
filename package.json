@@ -3,9 +3,6 @@
   "version": "0.0.4",
   "scripts": {
     "dev": "vite",
-    "start": "npm run build:css && concurrently \"npm run watch:css\" \"vite\"",
-    "watch:css": "npx tailwindcss -i ./src/index.css -o ./src/styles.css --watch",
-    "build:css": "npx tailwindcss -i ./src/index.css -o ./src/styles.css",
     "build": "tsc && npm run build:css && vite build",
     "preview": "vite preview",
     "lint": "eslint --ignore-path .eslintignore ./ --ext .ts,.tsx",
