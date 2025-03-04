@@ -34,8 +34,8 @@ Deployment Demo: [Pokemon App Demo](https://pokemon-app-velez.vercel.app/)
 ### Clone the repository
 
 ```
-git clone https://github.com/vintagegnome/react-query-zustand-ts-vite-boilerplate.git
-cd react-query-zustand-ts-vite-boilerplate
+git clone https://github.com/pvelezp/pokemon-app.git
+cd pokemon-app
 ```
 
 ### Installing Dependencies
