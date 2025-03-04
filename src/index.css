@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+
+body {
+  font-family: monospace;
+  overscroll-behavior: none;
+}
