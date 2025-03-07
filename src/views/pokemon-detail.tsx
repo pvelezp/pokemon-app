@@ -1,10 +1,13 @@
 import ErrorMessage from '@/components/error-page';
 import Layout from '@/components/home-layout';
+import { usePokemonStore } from '@/store/pokemon-store';
+import { POKEMONS_PER_PAGE } from 'constants/pokemon';
 import { useNavigate, useParams } from 'react-router-dom';
 import { usePokemonDetails } from 'viewModels/use-pokemon-details';
 
 const PokemonDetails = () => {
   const { id } = useParams<{ id: string }>();
+  const { setLastViewedPage } = usePokemonStore();
   const navigate = useNavigate();
   const pokemonId = Number(id);
   const { data: pokemon, isLoading, error } = usePokemonDetails(Number(id));
@@ -33,7 +36,10 @@ const PokemonDetails = () => {
   return (
     <Layout>
       <button
-        onClick={() => navigate('/')}
+        onClick={() => {
+          setLastViewedPage(Math.ceil(pokemonId / POKEMONS_PER_PAGE));
+          navigate('/');
+        }}
         className="px-6 py-2 bg-cyan-700 rounded-full shadow-lg hover:bg-cyan-800"
       >
         ◀️ Back to Home
