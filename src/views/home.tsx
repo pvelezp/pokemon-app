@@ -4,11 +4,11 @@ import PokemonCard from '@/components/pokemon-card';
 import SkeletonCard from '@/components/skeleton-card';
 import { usePokemonStore } from '@/store/pokemon-store';
 import { POKEMONS_PER_PAGE } from 'constants/pokemon';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { usePokemonList } from 'viewModels/use-pokemon-list';
 
 const Home = () => {
-  const { lastViewedPage, setLastViewedPage } = usePokemonStore();
+  const { lastViewedPage } = usePokemonStore();
   const [page, setPage] = useState(lastViewedPage || 1);
   const {
     data: pokemonList,
@@ -16,10 +16,6 @@ const Home = () => {
     error,
     isLastPage,
   } = usePokemonList(page);
-
-  useEffect(() => {
-    setLastViewedPage(page);
-  }, [page]);
 
   if (isLoading)
     return (
